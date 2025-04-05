@@ -1,0 +1,350 @@
+:root {
+    --ikea-blue: #0051ba;
+    --ikea-yellow: #ffdb00;
+    --ikea-border: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ikea-header__logo {
+    max-height: 90px;
+}
+
+.ikea-nav {
+    background-color: var(--ikea-blue);
+    color: white;
+}
+
+.ikea-nav__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+}
+
+.ikea-nav__menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.ikea-nav__item {
+    position: relative;
+}
+
+.ikea-nav__item:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background-color: var(--ikea-border);
+}
+
+.ikea-nav__link {
+    color: white;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+
+.ikea-nav__link:hover,
+.ikea-nav__link:focus {
+    background-color: #003d8f;
+    color: white;
+}
+
+.ikea-nav__item--all-categories {
+    margin-left: auto;
+}
+
+.ikea-search {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.ikea-search__button {
+    background-color: white;
+    border: none;
+}
+
+.ikea-hero {
+    position: relative;
+}
+
+
+.ikea-product-grid__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ikea-product-grid__item {
+    overflow: hidden;
+    position: relative;
+}
+
+.ikea-product-grid__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ikea-product-grid__image:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.ikea-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e88e5;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ikea-chat:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.ikea-chat__icon {
+    font-size: 24px;
+}
+
+.btn-product {
+    padding: 8px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.678);
+    border-radius: 1px;
+    font-size: 13px;
+}
+
+.btn-product:hover {
+    background-color: #e7da1f;
+}
+
+.ikea-collection__item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.ikea-collection__items {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.ikea-collection__img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.ikea-collection__image {
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-height: 300px;
+}
+
+.ikea-collection__sold-out {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e93a3a;
+    color: white;
+    padding: 7px 11px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.ikea-collection__img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ikea-collection__items:hover .ikea-collection__img-overlay {
+    opacity: 1;
+}
+
+.ikea-collection__items:hover .ikea-collection__image {
+    transform: scale(1.05);
+}
+
+.ikea-collection__buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.ikea-collection__items:hover .ikea-collection__buttons {
+    opacity: 1;
+}
+
+.ikea-collection__buttons .btn {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ikea-collection__buttons .btn i {
+    font-size: 16px;
+}
+
+.ikea-collection__buttons .btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.ikea-collection__overlay {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.ikea-collection__overlay .ikea-collection__price {
+    color: #e63946;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.custom-collection__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ikea-info__icon {
+    flex-shrink: 0;
+}
+
+.ikea-info__image {
+    width: 50px;
+    height: auto;
+}
+
+.ikea-info__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ikea-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ikea-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.ikea-footer {
+    background-color: #333;
+    color: #fff;
+}
+
+.ikea-footer h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.ikea-footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.ikea-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.ikea-footer .social-icons {
+    margin-top: 20px;
+}
+
+.ikea-footer .social-icon {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.ikea-footer .social-icon:hover {
+    color: #007bff;
+}
+
+.ikea-footer .container {
+    padding: 40px 0;
+}
+
+.ikea-footer .row>.col-md-3 {
+    margin-bottom: 20px;
+}
+
+.ikea-footer .row>.col-md-6 {
+    margin-top: 20px;
+}
+
+.ikea-footer .social-icons {
+    margin-top: 30px;
+}
+
+.ikea-footer .social-icon {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.ikea-footer .social-icon:hover {
+    background-color: #007bff;
+    color: white;
+}
